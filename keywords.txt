@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map For GyverShift
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+GSHIFT_DELAY	KEYWORD1
+GSHIFTSPI_DELAY	KEYWORD1
+
+GyverShift	KEYWORD1
+GyverShiftSPI	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+update	KEYWORD2
+changed	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
