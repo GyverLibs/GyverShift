@@ -47,13 +47,21 @@
 ### Инициализация
 ```cpp
 // bit-bang (любые пины)
+#include <GyverShift.h>
 GyverShift<OUTPUT, кол-во чипов> reg(CS, DAT, CLK); // выход (HC595)
 GyverShift<INPUT, кол-во чипов> reg(CS, DAT, CLK);  // вход (HC165)
 
+// bit-bang (любые пины) - пины в шаблоне (более высокая скорость передачи на AVR)
+#include <GyverShiftT.h>
+GyverShiftT<OUTPUT, кол-во чипов, CS, DAT, CLK> reg; // выход (HC595)
+GyverShiftT<INPUT, кол-во чипов, CS, DAT, CLK> reg;  // вход (HC165)
+
 // аппаратный SPI
+#include <GyverShiftSPI.h>
 GyverShiftSPI<OUTPUT, кол-во чипов, clock = 4000000> reg(CS); // выход (HC595)
 GyverShiftSPI<INPUT, кол-во чипов, clock = 4000000> reg(CS);  // вход (HC165)
 
+// пины SPI
 // OUTPUT: DAT->MOSI
 // INPUT: DAT->MISO
 ```
@@ -138,6 +146,7 @@ void setup() {
 
 ## Версии
 - v1.0
+- v1.1 - добавлен класс GyverShiftT с пинами в шаблоне
 
 <a id="install"></a>
 ## Установка

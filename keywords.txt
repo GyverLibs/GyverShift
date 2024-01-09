@@ -8,8 +8,10 @@
 
 GSHIFT_DELAY	KEYWORD1
 GSHIFTSPI_DELAY	KEYWORD1
+GSHIFTT_DELAY	KEYWORD1
 
 GyverShift	KEYWORD1
+GyverShiftT	KEYWORD1
 GyverShiftSPI	KEYWORD1
 
 #######################################
