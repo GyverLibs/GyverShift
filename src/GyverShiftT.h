@@ -8,9 +8,9 @@
 #endif
 
 template <uint8_t mode, uint16_t chip_amount, uint8_t cs_pin, uint8_t dt_pin, uint8_t clk_pin>
-class GyverShift : public BitPackExt {
+class GyverShiftT : public BitPackExt {
    public:
-    GyverShift() : BitPackExt(buffer, chip_amount * 8, true) {
+    GyverShiftT() : BitPackExt(buffer, chip_amount * 8, true) {
         gio::init(cs_pin, OUTPUT);
         gio::init(dt_pin, mode);
         gio::init(clk_pin, OUTPUT);
