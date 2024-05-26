@@ -1,7 +1,8 @@
 #pragma once
 #include <Arduino.h>
 #include <BitPack.h>
-#include <GyverIO.h>
+#include <gio/gio.h>
+#include <utils/shift.h>
 
 #ifndef GSHIFTT_DELAY
 #define GSHIFTT_DELAY 0

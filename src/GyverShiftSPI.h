@@ -1,7 +1,7 @@
 #pragma once
 #include <Arduino.h>
 #include <BitPack.h>
-#include <GyverIO.h>
+#include <gio/gio.h>
 #include <SPI.h>
 
 #ifndef GSHIFTSPI_DELAY
