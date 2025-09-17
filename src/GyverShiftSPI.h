@@ -24,12 +24,18 @@ class GyverShiftSPI : public BitPackExt {
             if (GSHIFTSPI_DELAY) delayMicroseconds(GSHIFTSPI_DELAY);
             gio::high(_cs);
             SPI.beginTransaction(SPISettings(spi_clock, MSBFIRST, SPI_MODE0));
-            uint8_t b = 0;
+            uint8_t msb = gio::read(MISO);
+
             for (uint16_t i = 0; i < chip_amount; i++) {
-                b = SPI.transfer(0) >> 1;
-                if (buffer[i] != b) _changed = 1;
-                buffer[i] = b;
+                uint8_t b = SPI.transfer(0);
+                uint8_t n = (msb << 7) | (b >> 1);
+                if (buffer[i] != n) {
+                    buffer[i] = n;
+                    _changed = 1;
+                }
+                msb = b & 1;
             }
+
             SPI.endTransaction();
             return _changed;
         } else {
