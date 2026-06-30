@@ -70,6 +70,9 @@ GyverShiftSPI<INPUT, кол-во чипов, clock = 4000000> reg(CS);  // entra
 // spi
 // OUTPUT: DAT->MOSI
 // INPUT: DAT->MISO
+
+// call in setup() before reg.update()
+SPI.begin();
 ```
 
 ### Class description
